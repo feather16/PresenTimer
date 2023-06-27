@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #000000;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#timer {
+    font-size: 48px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #40d040;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button:hover {
+    background-color: #40b040;
+}
+
+.button:disabled {
+    background-image: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #90c090;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#lapTimes {
+    text-align: center;
+    margin-top: 20px;
+}
