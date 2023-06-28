@@ -136,7 +136,43 @@ $("#copyButton").click(function(){
     }
 });
 
+function setColors(){
+    const isDarkmode = localStorage.getItem('darkmode') == "on";
+    $("#darkmodeButton").text(isDarkmode ? 'ダークモードをOFFにする' : 'ダークモードをONにする');
+    $("body").css("background-color", isDarkmode ? 'black' : 'white');
+    const elements = $(".container").find("*");
+    for(let element of elements){
+        const classname = $(element).attr("class");
+        const id = $(element).attr("id");
+        if(classname != "button"){
+            $(element).css("color", isDarkmode ? 'white' : 'black');
+        }
+        if(id == "lapTimes"){
+            const laps = $(element).children();
+            for(let e of laps){
+                $(e).css("color", isDarkmode ? 'white' : 'black');
+            }
+        }
+    }
+}
+
+$("#darkmodeButton").click(function(){
+    const isDarkmode = localStorage.getItem('darkmode') == "on";
+    localStorage.setItem('darkmode', isDarkmode ? 'off' : 'on');
+    setColors();
+});
+
 $(document).ready(function(){
+    // ローカルストレージ
+    const currentStorageVersion = '20230629';
+    if(localStorage.getItem('storageVersion') !== currentStorageVersion){
+        localStorage.clear();
+        localStorage.setItem('storageVersion', currentStorageVersion);
+        localStorage.setItem('darkmode', 'off');
+    }
+    else{
+        setColors();
+    }
     setInterval(updateTimer, 10);
     setInterval(buttonDisabler, 20);
     setInterval(unloadCheck, 20);
