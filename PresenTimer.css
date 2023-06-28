@@ -39,14 +39,7 @@ h1 {
 
 .button:disabled {
     background-image: none;
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 18px;
     background-color: #90c090;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
 }
 
 #lapTimes {
