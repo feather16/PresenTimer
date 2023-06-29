@@ -9,9 +9,9 @@ function zeroPadding(num, length){
 }
 
 function formatMSTime(ms) {
-    let minutes = Math.floor(ms / (60 * 1000));
-    let seconds = Math.floor((ms % (60 * 1000)) / 1000);
-    let milliseconds = Math.floor(ms % 1000);
+    const minutes = Math.floor(ms / (60 * 1000));
+    const seconds = Math.floor((ms % (60 * 1000)) / 1000);
+    const milliseconds = Math.floor(ms % 1000);
 
     return (
         zeroPadding(minutes, 2) +
@@ -23,9 +23,9 @@ function formatMSTime(ms) {
 }
 
 function formatMSTimeForPaste(ms){
-    let sec = Math.floor(ms / 1000 + 0.5);
-    let minutes = Math.floor(sec / 60);
-    let seconds = Math.floor(sec % 60);
+    const sec = Math.floor(ms / 1000 + 0.5);
+    const minutes = Math.floor(sec / 60);
+    const seconds = Math.floor(sec % 60);
 
     return (
         zeroPadding(minutes, 2) +
@@ -130,7 +130,7 @@ $("#copyButton").click(function(){
                 formatMSTimeForPaste(lapTimes[i])
             );
         }
-        navigator.clipboard.writeText(copiedText).then(function() {
+        navigator.clipboard.writeText(copiedText).then(function(){
             alert("ラップタイムがコピーされました");
         });
     }
