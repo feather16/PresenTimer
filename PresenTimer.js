@@ -88,7 +88,7 @@ $("#lapButton").click(function(){
         const currentTime = new Date().getTime();
         const lapTime = currentTime - startedTime + stoppedTime;
         const lapTimeDiff = lapTimes.length == 0 ? lapTime : (lapTime - lapTimes[lapTimes.length - 1]);
-        $("#lapTimes").append(
+        $("#lapTimes").prepend(
             "<p style='line-height: 0.4'>" + 
             '#' + zeroPadding(lapTimes.length + 1, 2) + "&nbsp;&nbsp;&nbsp;" +
             formatMSTime(lapTimeDiff) + "&nbsp;&nbsp;&nbsp;" +
