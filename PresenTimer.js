@@ -56,11 +56,13 @@ function buttonDisabler(){
 function unloadCheck(){
     if(state == State.none){
         window.onbeforeunload = null;
+        document.title = 'ストップウォッチ';
     }
     else{
         window.onbeforeunload = function(e){
             e.returnValue = "ページを離れようとしています。よろしいですか？";
         };
+        document.title = '*ストップウォッチ';
     }
 }
 
